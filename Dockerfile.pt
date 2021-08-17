@@ -1,5 +1,5 @@
-FROM ghcr.io/ibm-samsung-aisystem/dc:test
-
+ARG  BUILD_TAG
+FROM ghcr.io/ibm-samsung-aisystem/dc:${BUILD_TAG}
 
 ARG DEE_COMMIT_ID=""
 ARG DEEPTOOLS_COMMIT_ID=""
