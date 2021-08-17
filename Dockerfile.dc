@@ -67,7 +67,8 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${SENDNN_DIR}/lib \
     DEEPTOOLS_PATH=$SENDNN_DIR/share/ \
     SENCORES=1
 
-RUN chown -R 1001:0 ${APP_ROOT} && \
+RUN ls -lah ${APP_ROOT}/sendnn_dir/ && \
+    chown -R 1001:0 ${APP_ROOT} && \
     fix-permissions ${APP_ROOT} -P && \
     fix-permissions /opt/anaconda -P && \
     rpm-file-permissions
