@@ -1,4 +1,4 @@
-FROM ghcr.io/ibm-samsung-aisystem/dc:latest
+FROM ghcr.io/ibm-samsung-aisystem/dc:test
 
 
 ARG DEE_COMMIT_ID=""
@@ -66,8 +66,9 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${SENDNN_DIR}/lib \
     DEEPTOOLS_PATH=$SENDNN_DIR/share \
     SENCORES=1
 
-RUN ls -l ${APP_ROOT} && \
-    ls -l ${APP_ROOT}/src/pytorch/ && \
+RUN ls -lah ${APP_ROOT} && \
+    ls -lah ${APP_ROOT}/sendnn_dir/ && \
+    ls -lah ${APP_ROOT}/src/pytorch/ && \
     cd ${APP_ROOT}/src/pytorch/ && \
     python setup.py clean && \
     python setup.py install
